@@ -1,0 +1,119 @@
+.nav {
+    background-color: transparent;
+    transition: background-color 0.3s ease, height 0.3s ease;
+    @include breakpoint(0 $md - 1) {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 115;
+        opacity: 0;
+        visibility: hidden;
+        //background-color: #000;
+        @include background-image(radial-gradient($color-light 0%, $color-main 100%));
+        transform: scale(1.25);
+        transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+    }
+    @include breakpoint($md) {
+        height: $headerHeightTablet;
+        position: fixed;
+        width: 50%;
+        right: $headerHeightTablet;
+        top: 0;
+        z-index: 380;
+        &.fixed {
+            position: fixed;
+            height: 70px;
+            //background-color: rgba(0, 0, 0, 0.7);
+            .wrap-nav a {
+                height: 70px;
+                line-height: 70px;
+            }
+        }
+    }
+    @include breakpoint($lg) {
+        height: $headerHeightDesktop;
+        right: $headerHeightDesktop;
+    }
+    @include breakpoint($xxl) {
+        height: $headerHeightLarge;
+        right: $headerHeightLarge;
+    }
+}
+
+.wrap-nav {
+    //padding-right: 10%;
+    height: $headerHeightDesktop;
+    width: 100%;
+    //border: 1px solid #ff0;
+    text-align: right;
+    font-size: 0;
+    vertical-align: top;
+    @include breakpoint(0 $md - 1) {
+        padding-top: 120px;
+    }
+    a {
+        color: #fff;
+        font-size: 1.125rem;
+        padding: 0 2rem;
+        transition: transform 0.3s ease, height 0.3s ease, line-height 0.3s ease;
+        @include breakpoint(0 $md - 1) {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+            line-height: 2em;
+            font-size: 1.5rem;
+            padding: 0;
+        }
+        @include breakpoint($md) {
+            height: $headerHeightTablet;
+            line-height: $headerHeightTablet;
+            display: inline-block;
+            overflow: hidden;
+            margin: 0;
+            // &:hover {
+            //     transform: scale(1.25);
+            // }
+        }
+        @include breakpoint($lg) {
+            height: $headerHeightDesktop;
+            line-height: $headerHeightDesktop;
+        }
+        @include breakpoint($xl) {
+            //line-height: $headerHeightDesktop;
+            //display: inline-block;
+            //overflow: hidden;
+            //margin: 0;
+            &:hover {
+                transform: scale(1.25);
+            }
+        }
+        @include breakpoint($xxl) {
+            height: $headerHeightLarge;
+            line-height: $headerHeightLarge;
+        }
+        // &.btn-search {
+        //     width: $headerHeightMobile;
+        //     height: $headerHeightMobile;
+        //     background: url("../../images/layout/search.svg") center center no-repeat;
+        //     background-size: 20px auto;
+        //     transition: background-size 0.3s ease;
+        //     text-indent: -9999px;
+        //     font-size: 0;
+        //     @include breakpoint($xl) {
+        //         width: $headerHeightDesktop;
+        //         height: $headerHeightDesktop;
+        //     }
+        //     &:hover {
+        //         background-size: 26px auto;
+        //     }
+        // }
+    }
+}

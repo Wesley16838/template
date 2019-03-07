@@ -1,0 +1,320 @@
+.news-lists {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    @include breakpoint($lg) {
+        margin-bottom: 100px;
+    }
+    @include breakpoint($xl) {
+        margin-top: 80px;
+    }
+    .banner {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        @include breakpoint(0 $md - 1) {
+            height: auto;
+            align-items: flex-start;
+            background-image: none !important;
+        }
+    }
+    .banner-c {
+        display: flex;
+        align-items: center;
+        justify-content: center; //控制左中右
+        width: 100%;
+        @include breakpoint(0 $md - 1) {
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        img {
+            @include breakpoint(0 $md - 1) {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            @include breakpoint($md) {
+                display: none;
+            }
+        }
+    }
+    .banner-c-d {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center; //控制左中右
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #222;
+            @include breakpoint($md) {
+                font-size: 46px;
+                color: #fff;
+            }
+        }
+        h3 {
+            font-size: 16px;
+            color: #222;
+            @include breakpoint($md) {
+                font-size: 18px;
+                color: #fff;
+            }
+        }
+        p {
+            display: none;
+            @include breakpoint($md) {
+                display: block;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+    .category {
+        width: 100%;
+    }
+    .category-c {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        &.left {
+            justify-content: flex-start;
+            .category-c-d {
+                @include breakpoint($md) {
+                    select {
+                        margin-right: 10px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        &.center {
+            justify-content: center;
+            .category-c-d {
+                @include breakpoint($md) {
+                    select {
+                        margin-right: 5px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .category-c-d {
+        display: flex;
+        @include breakpoint(0 $md - 1) {
+            flex-direction: column;
+            select {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+        @include breakpoint($md) {
+            select {
+                margin-left: 10px;
+            }
+        }
+    }
+    .pages {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        a {
+            display: block;
+            font-size: 1rem;
+            color: #999;
+            padding: 0 15px;
+            &.active {
+                color: #349844;
+            }
+            &:first-of-type {
+                margin-right: 45px;
+            }
+            &:last-of-type {
+                margin-left: 45px;
+            }
+        }
+    }
+    .contain {
+        background-image: url(../../images/layout/gray-cover.png);
+        background-position: top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 40px;
+        @include breakpoint(0 $md - 1) {
+            background-image: none;
+        }
+        @include breakpoint($lg) {
+            padding-top: 65px;
+        }
+    }
+    ul {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include breakpoint(0 $md - 1) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        @include breakpoint($md) {
+            select {
+                width: 160px;
+            }
+        }
+        select {
+            color: #222;
+        }
+    }
+    span {
+        color: #B8A58C;
+        font-size: 1rem;
+        font-family: 'Open Sans', sans-serif;
+        margin-right: 40px;
+        @include breakpoint(0 $md - 1) {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    }
+    p {
+        font-size: 1rem;
+        color: #222;
+        margin-bottom: 0;
+        transition-duration: .4s;
+    }
+}
+
+.line-type {
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 100%;
+        min-height: 60px;
+        border-bottom: 1px solid #E0E0E0;
+        padding: 5px 10px;
+        transition-duration: 0.3s;
+        @include breakpoint($md) {
+            padding: 0 15px;
+        }
+        &:first-of-type {
+            border-top: 1px solid #E0E0E0;
+        }
+        &:hover {
+            background-color: #e0e0e0;
+            a {
+                transform: scale(1.05) translateX(22px);
+            }
+        }
+        a {
+            display: block;
+            width: 100%;
+            transition-duration: .4s;
+            @include breakpoint($md) {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: row;
+            }
+        }
+        .text {
+            display: none;
+        }
+        img {
+            display: none;
+        }
+    }
+}
+
+// 圖文式限制六筆換頁*
+.img-type {
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    li {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        margin-right: 30px;
+        font-size: 0;
+        border-bottom: none;
+        transition-duration: 0.3s;
+        &:hover {
+            // box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            transform: translate(-2px, -2px);
+            background-color: #fff;
+            a {
+                transform: scale(1) translateX(0);
+            }
+        }
+        @include breakpoint(0 $md - 1) {
+            width: 100%;
+            margin-bottom: 40px;
+            margin-right: 0;
+        }
+        @include breakpoint($md $xl - 1) {
+            width: calc((100% - 30px) / 2);
+            margin-bottom: 50px;
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+        @include breakpoint($xl) {
+            width: calc((100% - 60px) / 3);
+            margin-bottom: 60px;
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+        }
+        a {
+            display: block;
+            width: 100%;
+            @include breakpoint($md) {
+                display: block;
+            }
+        }
+        .text {
+            display: none;
+            margin-bottom: 0;
+            @include breakpoint($sm) {
+                display: block;
+            }
+        }
+        span {
+            display: inline-block;
+            margin-bottom: 5px;
+            margin-right: 10px;
+        }
+        p {
+            margin-bottom: 0;
+            @include breakpoint($md) {
+                margin-bottom: 20px;
+            }
+        }
+        img {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
