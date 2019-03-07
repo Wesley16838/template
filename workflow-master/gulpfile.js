@@ -43,7 +43,6 @@ var imgpath = "../../assets/img/"; //css輸出後的的圖片路徑，新後台�
 var assetspath = "../../../../assets/"; //php輸出後的的路徑，..層級請自己加，新後台請採用預設即可
 var htmlfolder = "html"; //src裡面的預設html資料夾，新後台請採用預設即可
 var destfolder = "application/views/en"; //輸出php的預設資料夾，注意!!此資料夾的層級要與html-output的資料夾
-
 //var pathToFolder = 'assets/admin/js/origin';
 //===========================================
 
@@ -56,7 +55,7 @@ var destfolder = "application/views/en"; //輸出php的預設資料夾，注意!
 gulp.task('server', function() {
     connect.server({
         livereload: true,
-        port: 8080
+        port: 3000
     });
 });
 

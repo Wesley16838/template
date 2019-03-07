@@ -87,7 +87,10 @@
    - `var destfolder = "application/views/en";` **輸出php的預設資料夾，注意!!此資料夾的層級要與html-output的資料夾同級**
    **別忘了語系名稱**
 9. 使用 `gulp init` 進行第一次初始化，將img/js輸出(若要保持乾淨資料夾者可省略此步驟)，若是有將output ignore的版本，也可以用這個方式來跑第一次。
+   - if Local gulp not found (Try running: npm install gulp) show in the terminal, running `npm link gulp`
+   - if Error: Cannot find module 'gulp-sass' show in the terminal next, Just do `npm update` and then `npm install gulp-sass --save-dev`
 10. 使用 `gulp live` 開始監聽編譯
+   - if listen EACCES 127.0.0.1:8080 show in the terminal, Please choose another port and running `gulp live` again
 
 
 
